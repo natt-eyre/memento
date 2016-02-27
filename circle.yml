@@ -1,0 +1,11 @@
+database:
+  override:
+    - bin/setup
+test:
+  override:
+    - bin/rake
+deployment:
+  staging:
+    branch: master
+    commands:
+      - bin/deploy staging
