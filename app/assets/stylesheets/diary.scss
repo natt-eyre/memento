@@ -1,11 +1,15 @@
 .diary-header {
   font-size: 3em;
+  // font-family: 'Crafty Girls', cursive;
+  font-family: 'Vollkorn', serif;
+  color: #3c3a47;
 }
 
 
+$simple-button-color: #666678;
 .simple-button {
   appearance: none;
-  background-color: $action-color;
+  background-color: $simple-button-color;
   border: 0;
   border-radius: $base-border-radius;
   color: #fff;
@@ -25,7 +29,7 @@
 
   &:hover,
   &:focus {
-    background-color: shade($action-color, 20%);
+    background-color: shade($simple-button-color, 20%);
     color: #fff;
   }
 
@@ -34,7 +38,22 @@
     opacity: 0.5;
 
     &:hover {
-      background-color: $action-color;
+      background-color: $simple-button-color;
     }
   }
+}
+
+// .diary-home {
+//   background-color: #ededf2;
+// }
+
+li.block {
+  @include span-columns(3);
+  @include omega(4n);
+}
+
+.entry-preview {
+  height: 200px;
+  background-color: #B2B4AF;
+  margin-bottom: 25px;
 }
