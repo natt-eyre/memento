@@ -31,5 +31,6 @@ en:
     show:
       index: Back to diary
       edit: Edit
+      destroy: Delete entry
     edit:
       save: Save changes

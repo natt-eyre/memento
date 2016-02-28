@@ -49,4 +49,15 @@ describe EntriesController do
       expect(assigns(:entry).content).to eq "updated_content"
     end
   end
+
+  describe "#destroy" do
+    it "deletes entry" do
+      user = create(:user)
+      entry = create(:entry, user: user)
+
+      sign_in user
+      expect { delete :destroy, id: entry.id }.to change {
+       user.entries.count }.by(-1)
+    end
+  end
 end
