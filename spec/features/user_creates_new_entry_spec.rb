@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "User creates an entry" do
+feature "User creates an entry with default date" do
   scenario "successfully" do
     login_as( create(:user), :scope => :user, :run_callbacks => false)
     visit root_path

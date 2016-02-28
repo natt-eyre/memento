@@ -41,7 +41,7 @@ class EntriesController < ApplicationController
   private
 
   def entry_params
-    params.require(:entry).permit(:content)
+    params.require(:entry).permit(:content, :target_date)
   end
 
   def get_entry
