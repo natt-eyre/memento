@@ -39,6 +39,10 @@
   }
 }
 
+// .diary-home {
+//   background-color: #ededf2;
+// }
+
 li.block {
   @include span-columns(3);
   @include omega(4n);
