@@ -1,5 +1,6 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
+  before_action :get_entry, only: [ :show, :edit, :update]
 
   def index
     @entries = current_user.entries.all
@@ -19,14 +20,27 @@ class EntriesController < ApplicationController
   end
 
   def show
-    @entry = current_user.entries.find(params[:id])
   end
 
+  def edit
+  end
+
+  def update
+    if @entry.update_attributes(entry_params)
+      redirect_to @entry
+    else
+      render :edit
+    end
+  end
 
   private
 
   def entry_params
     params.require(:entry).permit(:content)
+  end
+
+  def get_entry
+    @entry = current_user.entries.find(params[:id])
   end
 
 end

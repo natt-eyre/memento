@@ -37,4 +37,16 @@ describe EntriesController do
       expect(assigns(:entries).map(&:user)).to eq [our_user]
     end
   end
+
+  describe "#update" do
+    it "updates entry" do
+      user = create(:user)
+      entry = create(:entry, user: user)
+
+      sign_in user
+      put :update, id: entry.id, entry: { content: "updated_content"}
+
+      expect(assigns(:entry).content).to eq "updated_content"
+    end
+  end
 end
