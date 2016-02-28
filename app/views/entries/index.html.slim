@@ -1,4 +1,8 @@
 h1.diary-header
   | Diary
-= link_to t("entries.index.new"), new_entry_path
-= render collection: @entries, partial: "entry"
+
+div.row
+  = link_to t("entries.index.new"), new_entry_path, class: "simple-button"
+
+div.row
+  = render collection: @entries, partial: "entry"
