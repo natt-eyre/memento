@@ -43,3 +43,9 @@ li.block {
   @include span-columns(3);
   @include omega(4n);
 }
+
+.entry-preview {
+  height: 200px;
+  background-color: #ded2ca;
+  margin-bottom: 10px;
+}
