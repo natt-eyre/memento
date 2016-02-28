@@ -1,0 +1,4 @@
+h1.diary-header
+  | Diary
+= link_to t("entries.index.new"), new_entry_path
+= render collection: @entries, partial: "entry"
