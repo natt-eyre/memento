@@ -1,0 +1,5 @@
+= link_to t("entries.show.index"), root_path
+= link_to t("entries.show.edit"), edit_entry_path(@entry)
+
+= @entry.created_at
+= @entry.content

@@ -21,6 +21,7 @@ gem "rails", "~> 4.2.0"
 gem "recipient_interceptor"
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
+gem "slim-rails"
 gem "title"
 gem "uglifier"
 
