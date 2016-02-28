@@ -15,5 +15,21 @@ en:
       short:
         "%B %d"
 
+  activerecord:
+    attributes:
+      entry:
+        content: content
+
   titles:
     application: Memento
+
+  entries:
+    index:
+      new: New entry
+    new:
+      save: Save entry
+    show:
+      index: Back to diary
+      edit: Edit
+    edit:
+      save: Save changes

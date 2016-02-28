@@ -119,6 +119,8 @@ GEM
     json (1.8.3)
     launchy (2.4.3)
       addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -269,6 +271,7 @@ DEPENDENCIES
   bourbon (~> 4.2.0)
   bullet
   bundler-audit
+  capybara
   capybara-webkit
   coffee-rails (~> 4.1.0)
   database_cleaner
@@ -282,6 +285,7 @@ DEPENDENCIES
   honeybadger
   jquery-rails
   launchy
+  letter_opener
   neat (~> 1.7.0)
   newrelic_rpm (>= 3.9.8)
   normalize-rails (~> 3.0.0)

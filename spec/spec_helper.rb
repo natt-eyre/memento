@@ -4,6 +4,7 @@ if ENV.fetch("COVERAGE", false)
 end
 
 require "webmock/rspec"
+require 'capybara/rspec'
 
 # http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
@@ -21,8 +22,3 @@ RSpec.configure do |config|
 end
 
 WebMock.disable_net_connect!(allow_localhost: true)
-
-RSpec.configure do |config|
-  config.include Devise::TestHelpers, type: :controller
-  config.include Devise::TestHelpers, type: :view
-end

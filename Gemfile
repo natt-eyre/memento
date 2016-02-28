@@ -30,12 +30,14 @@ group :development do
   gem "spring"
   gem "spring-commands-rspec"
   gem "web-console"
+  gem "letter_opener"
 end
 
 group :development, :test do
   gem "awesome_print"
   gem "bullet"
   gem "bundler-audit", require: false
+  gem 'capybara'
   gem "dotenv-rails"
   gem "factory_girl_rails"
   gem "pry-byebug"

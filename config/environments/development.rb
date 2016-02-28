@@ -9,7 +9,7 @@ Rails.application.configure do
     Bullet.bullet_logger = true
     Bullet.rails_logger = true
   end
-  config.action_mailer.delivery_method = :test
+  config.action_mailer.delivery_method = :letter_opener
   config.active_support.deprecation = :log
   config.active_record.migration_error = :page_load
   config.assets.debug = true
