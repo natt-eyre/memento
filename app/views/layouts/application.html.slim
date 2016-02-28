@@ -9,6 +9,7 @@ html lang="en"
     = stylesheet_link_tag :application, media: "all"
     = csrf_meta_tags
   body class=body_class 
-    = render "flashes"
-    = yield
-    = render "javascript"
+    div.container
+      = render "flashes"
+      = yield
+      = render "javascript"
