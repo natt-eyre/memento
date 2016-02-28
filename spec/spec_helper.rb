@@ -21,3 +21,8 @@ RSpec.configure do |config|
 end
 
 WebMock.disable_net_connect!(allow_localhost: true)
+
+RSpec.configure do |config|
+  config.include Devise::TestHelpers, type: :controller
+  config.include Devise::TestHelpers, type: :view
+end
