@@ -2,7 +2,9 @@ h1.diary-header
   | Simple Diary
 
 div.row
-  = link_to t("entries.index.new"), new_entry_path, class: "simple-button"
+  = link_to t("entries.index.any_date"), new_entry_path, class: "simple-button"
+  = link_to t("entries.index.today"), new_entry_path({ "target_date": "today" }), class: "simple-button"
+  = link_to t("entries.index.yesterday"), new_entry_path({ "target_date": "yesterday" }), class: "simple-button"
 
 div.row
   = render collection: @entries, partial: "entry"

@@ -25,7 +25,10 @@ en:
 
   entries:
     index:
-      new: New entry
+      any_date: Any date
+      today: Today
+      yesterday: Yesterday
+      
     new:
       save: Save entry
     show:

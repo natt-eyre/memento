@@ -7,6 +7,8 @@ development: &default
   pool: <%= Integer(ENV.fetch("DB_POOL", 5)) %>
   reaping_frequency: <%= Integer(ENV.fetch("DB_REAPING_FREQUENCY", 10)) %>
   timeout: 5000
+  username: ubuntu
+  password: 1509
 
 test:
   <<: *default

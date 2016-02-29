@@ -7,7 +7,13 @@ class EntriesController < ApplicationController
   end
 
   def new
-    @entry = current_user.entries.new
+    if params["target_date"] == "today"
+      @entry = current_user.entries.new({target_date: Time.now})
+    elsif params["target_date"] == "yesterday"
+      @entry = current_user.entries.new({target_date: Time.now - 1.day})
+    else
+      @entry = current_user.entries.new
+    end
   end
 
   def create
