@@ -19,6 +19,7 @@ en:
     attributes:
       entry:
         content: content
+        target_date: Target date
 
   titles:
     application: Memento

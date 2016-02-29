@@ -5,7 +5,7 @@ describe EntriesController do
     it "creates entries for current user" do
       user = create(:user)
       sign_in user
-      post :create, entry: { content: "good day"}
+      post :create, entry: { content: "good day", target_date: Time.now}
 
       expect(Entry.last.user).to eq user
     end
