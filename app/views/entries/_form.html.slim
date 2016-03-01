@@ -1,4 +1,5 @@
 = simple_form_for @entry do |f|
   = f.input :content, as: :text
+  = f.input :picture, as: :file
   = f.input :target_date, as: :datetime, include_blank: true
   = f.button :submit, "Save entry"

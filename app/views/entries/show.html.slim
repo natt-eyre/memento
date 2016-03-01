@@ -2,5 +2,8 @@
 = link_to t("entries.show.edit"), edit_entry_path(@entry)
 = link_to t("entries.show.destroy"), @entry, method: :delete, data: {confirm: "Do you really want to delete this entry?"}
 
+- unless @entry.picture_file_name.nil?
+  = image_tag @entry.picture.url(:medium)
+
 = @entry.target_date
 = @entry.content
