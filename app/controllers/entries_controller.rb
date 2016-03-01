@@ -3,7 +3,7 @@ class EntriesController < ApplicationController
   before_action :get_entry, only: [ :show, :edit, :update, :destroy]
 
   def index
-    @entries = current_user.entries.all
+    @entries = current_user.entries.order(target_date: :desc).all
   end
 
   def new
