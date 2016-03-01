@@ -56,6 +56,26 @@ li.block {
   height: 200px;
   background-color: #B2B4AF;
   margin-bottom: 25px;
+  position: relative;
+
+  // TODO: join common styles
+  &__date-day {
+    color: #FFFFFF;
+    font-size: 3em;
+    font-weight: bold;
+    @include position(absolute, null 13px 8px null);
+    opacity: 0.8;
+    text-transform: uppercase;
+  }
+
+  &__date-month-year {
+    color: #FFFFFF;
+    font-size: 0.9em;
+    font-weight: bold;
+    @include position(absolute, null 13px 3px null);
+    opacity: 0.8;
+    text-transform: uppercase;
+  }
 }
 
 .button-group {

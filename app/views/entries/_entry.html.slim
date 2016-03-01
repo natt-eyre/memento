@@ -1,4 +1,10 @@
 li.block
   = link_to entry_path(entry) do
     div.entry-preview
-      = entry.target_date
+      /* TODO: move to helper(at least) */
+      div.entry-preview__date-day
+        = entry.target_date.day.to_s.rjust(2, '0')
+      div.entry-preview__date-month-year
+        - month_abbr = entry.target_date.strftime("%b")
+        - year = entry.target_date.year
+        = "#{month_abbr}. #{year}"
