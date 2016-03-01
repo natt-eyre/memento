@@ -57,3 +57,14 @@ li.block {
   background-color: #B2B4AF;
   margin-bottom: 25px;
 }
+
+.button-group {
+  .simple-button {
+    float: left;
+    margin-left: 10px;
+  }
+
+  .simple-button:first-child{
+    margin-left: 0;
+  }
+}
