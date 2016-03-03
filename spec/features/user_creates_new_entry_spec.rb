@@ -33,6 +33,20 @@ feature "User creates an entry" do
     expect(page.current_path).to eq(entry_path(Entry.last))
     expect(page).to have_content("good day")
   end
+  
+  scenario "successfully with image" do
+    path = File.expand_path('../fixtures/test_image.png', File.dirname(__FILE__))
+    login_as( create(:user), :scope => :user, :run_callbacks => false)
+    visit root_path
+
+    expect(page).to have_content("Diary")
+    click_on I18n.t("entries.index.today")
+    fill_in Entry.human_attribute_name("content"), with: "good day"
+    attach_file('Picture', path)
+    click_on I18n.t("entries.new.save")
+    
+    expect(page).to have_css("img[src*='test_image.png']")
+  end
 
   scenario "unsuccessfully" do
     login_as( create(:user), :scope => :user, :run_callbacks => false)
