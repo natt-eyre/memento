@@ -57,6 +57,7 @@ li.block {
   background-color: #B2B4AF;
   margin-bottom: 25px;
   position: relative;
+  overflow: hidden;
 
   // TODO: join common styles
   &__date-day {
@@ -75,6 +76,11 @@ li.block {
     @include position(absolute, null 13px 3px null);
     opacity: 0.8;
     text-transform: uppercase;
+  }
+  
+  &__picture {
+    min-width:100%;
+    min-height:100%;
   }
 }
 
