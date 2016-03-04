@@ -8,4 +8,5 @@ li.block
         - month_abbr = entry.target_date.strftime("%b")
         - year = entry.target_date.year
         = "#{month_abbr}. #{year}"
-      = image_tag entry.picture.url
+      - unless entry.picture_file_name.nil?
+        = image_tag entry.picture.url(:thumb)

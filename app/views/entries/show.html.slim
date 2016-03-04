@@ -3,7 +3,7 @@
 = link_to t("entries.show.destroy"), @entry, method: :delete, data: {confirm: "Do you really want to delete this entry?"}
 
 - unless @entry.picture_file_name.nil?
-  = image_tag @entry.picture.url(:medium)
+  = image_tag @entry.picture.url
 
 = @entry.target_date
 = @entry.content
