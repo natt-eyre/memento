@@ -54,9 +54,11 @@ li.block {
 
 .entry-preview {
   height: 200px;
+  width: 253px;
   background-color: #B2B4AF;
   margin-bottom: 25px;
   position: relative;
+  overflow: hidden;
 
   // TODO: join common styles
   &__date-day {
