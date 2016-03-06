@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    meta[content="text/html; charset=UTF-8" http-equiv="Content-Type"]
+  body
+    h1.diary-header
+      | Simple Diary
+    p
+      |  How are you doing today? What about writing some words into your&nbsp
+      = link_to "diary", @url
+      | ?
+      br
+      = link_to "Login to the site", @url
+
+    p
+      | Thanks for staying with us and have a great day!
+    p
+      | Memento Team

@@ -8,8 +8,13 @@ html lang="en"
     title= title
     = stylesheet_link_tag :application, media: "all"
     = csrf_meta_tags
-  body class=body_class 
+  body class=body_class
     div.container
       = render "flashes"
       = yield
       = render "javascript"
+      - if user_signed_in?
+        p
+          | Signed in as:
+          = current_user.email
+        = link_to "Sign out", destroy_user_session_path, method: :delete
