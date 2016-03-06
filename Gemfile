@@ -63,7 +63,7 @@ group :test do
 end
 
 group :staging, :production do
-  gem 'aws-sdk', '~> 2'
+  gem 'aws-sdk', '< 2.0'
   gem "rails_stdout_logging"
   gem "rack-timeout"
 end
