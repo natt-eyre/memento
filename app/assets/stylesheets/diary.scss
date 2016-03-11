@@ -90,3 +90,22 @@ li.block {
     margin-left: 0;
   }
 }
+.writing_zone {
+  width: 700px;
+  min-height: 50px;
+  border-style: none; 
+  border-color: Transparent; 
+  background-color: #F2F1F0;
+  box-shadow: none;
+  padding: 5px;
+  resize: none;
+  overflow: hidden;
+}
+.writing_zone:focus {
+  border-style: none;
+  border-color: Transparent;
+  box-shadow: none;
+  outline: 0 none !important;
+  resize: none;
+  overflow: hidden;
+}

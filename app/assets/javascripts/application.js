@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require writing_zone
 //= require_tree .
