@@ -1,5 +1,5 @@
 = simple_form_for @entry do |f|
-  = f.input :content, as: :text, label: false, placeholder: "Dear Diary...", input_html: { class: 'writing_zone noscroll' }
-  = f.input :picture, as: :file
-  = f.input :target_date, as: :datetime, include_blank: true
-  = f.button :submit, "Save entry"
+  = f.input :target_date, as: :string, include_blank: true, label: false, input_html: { class: 'datepicker' }
+  = f.input :picture, as: :file, label: false
+  = f.button :button, "Save entry", class: "save-btn"
+  = f.input :content, as: :contenteditable, label: false, input_html: { class: "shared-class"}, contenteditable_html: {class: "div-only-class"}, html_safe: true

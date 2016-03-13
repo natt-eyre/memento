@@ -1,50 +1,49 @@
 require "rails_helper"
 
 feature "User creates an entry" do
-  scenario "successfully for today" do
+  scenario "successfully for today", js: true do
     login_as( create(:user), :scope => :user, :run_callbacks => false)
     visit root_path
 
     expect(page).to have_content("Diary")
     click_on I18n.t("entries.index.today")
-    fill_in Entry.human_attribute_name("content"), with: "good day"
+    el = find(:xpath, "//div[@contenteditable='true']")
+    el.set("good day")
     click_on I18n.t("entries.new.save")
 
     expect(page).to have_link(I18n.t("entries.show.index"))
     expect(page.current_path).to eq(entry_path(Entry.last))
     expect(page).to have_content("good day")
   end
-  
-  scenario "successfully for any date" do
+
+  scenario "successfully for any date", js: true do
     login_as( create(:user), :scope => :user, :run_callbacks => false)
     visit root_path
 
     expect(page).to have_content("Diary")
     click_on I18n.t("entries.index.any_date")
-    fill_in Entry.human_attribute_name("content"), with: "good day"
-    select '2011', from: "entry[target_date(1i)]"
-    select 'February', from: "entry[target_date(2i)]"
-    select '1', from: "entry[target_date(3i)]"
-    select '12', from: "entry[target_date(4i)]"
-    select '00', from: "entry[target_date(5i)]"
+    el = find(:xpath, "//div[@contenteditable='true']")
+    el.set("good day")
+    fill_in "entry_target_date", with: "2016-03-13"
     click_on I18n.t("entries.new.save")
 
     expect(page).to have_link(I18n.t("entries.show.index"))
     expect(page.current_path).to eq(entry_path(Entry.last))
     expect(page).to have_content("good day")
   end
-  
-  scenario "successfully with image" do
+
+  scenario "successfully with image", js: true do
     path = File.expand_path('../fixtures/test_image.png', File.dirname(__FILE__))
     login_as( create(:user), :scope => :user, :run_callbacks => false)
     visit root_path
 
     expect(page).to have_content("Diary")
     click_on I18n.t("entries.index.today")
-    fill_in Entry.human_attribute_name("content"), with: "good day"
-    attach_file('Picture', path)
+    el = find(:xpath, "//div[@contenteditable='true']")
+    el.set("good day")
+    attach_file('entry_picture', path)
     click_on I18n.t("entries.new.save")
-    
+
     expect(page).to have_css("img[src*='test_image.png']")
   end
 

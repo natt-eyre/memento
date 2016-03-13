@@ -10,11 +10,15 @@ html lang="en"
     = csrf_meta_tags
   body class=body_class
     div.container
+      div.row-header
+        = link_to root_path do
+          h1.diary-header
+            | Simple Diary
+        - if user_signed_in?
+          div.header-info
+            | Signed in as:
+            = current_user.email
+            = link_to " Sign out", destroy_user_session_path, method: :delete
       = render "flashes"
       = yield
       = render "javascript"
-      - if user_signed_in?
-        p
-          | Signed in as:
-          = current_user.email
-        = link_to "Sign out", destroy_user_session_path, method: :delete

@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require writing_zone
+//= require jquery-ui
+//= require contenteditable
+//= require calender
 //= require_tree .

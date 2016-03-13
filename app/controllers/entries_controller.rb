@@ -53,5 +53,4 @@ class EntriesController < ApplicationController
   def get_entry
     @entry = current_user.entries.find(params[:id])
   end
-
 end
