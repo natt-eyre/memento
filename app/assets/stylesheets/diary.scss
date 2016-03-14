@@ -91,7 +91,9 @@ li.block {
     margin-left: 0;
   }
 }
-
+.entry_content {
+  margin-top: 13px;
+}
 .div-only-class {
   min-height: 50px;
   background-color: white;
@@ -152,4 +154,44 @@ li.block {
 }
 .save-btn:hover {
   background-color: #515160;
+}
+@-moz-document url-prefix() {
+  .save-btn {
+    margin-top: -2px;
+  }
+  #entry_picture {
+    margin-bottom: 12px;
+  }
+  .entry_target_date {
+    margin-bottom: -21px;
+  }
+}
+
+.outer-container {
+  @include outer-container;
+}
+.entry-show-container {
+  @include span-columns(8);
+  @include omega();
+}
+.entry-back-buttons {
+  @include span-columns(2);
+}
+.entry-show-text {
+  display: inline-block;
+}
+.entry-show-picture img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+.entry-show-picture {
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  margin: auto;
+}
+.entry-action-buttons {
+  @include span-columns(2);
 }
