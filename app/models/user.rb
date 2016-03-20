@@ -5,5 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable,
          :timeoutable, :lockable
   has_many :entries
-  
+
+  def subscribed?
+    false
+  end
 end

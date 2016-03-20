@@ -5,7 +5,7 @@ div.outer-container
     div.entry-show-text
       = @entry.target_date.strftime("%A, %d %b %Y")
       <br>
-      = @entry.content
+      = raw @entry.content
     div.entry-show-picture
       - unless @entry.picture_file_name.nil?
         = image_tag @entry.picture.url
