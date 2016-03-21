@@ -1,0 +1,6 @@
+= link_to t("entries.show.index"), root_path
+= pluralize(@stats.entries_count, 'entry')
+<br>
+= pluralize(@stats.words_count, 'word')
+<br>
+= pluralize(@stats.letters_count, "letter")

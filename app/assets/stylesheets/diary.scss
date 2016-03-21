@@ -90,6 +90,10 @@ li.block {
   .simple-button:first-child{
     margin-left: 0;
   }
+  .simple-button:last-child{
+    float: right;
+    margin-left: 0;
+  }
 }
 .entry_content {
   margin-top: 13px;
