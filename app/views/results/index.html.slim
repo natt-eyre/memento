@@ -1,0 +1,10 @@
+h3
+  | Search results for
+  em
+    = params[:query]
+- @search_results.each do |result|
+  h4
+    = link_to result.target_date, result
+  div
+    = result.content.html_safe
+  hr

@@ -15,6 +15,10 @@ html lang="en"
           h1.diary-header
             | Simple Diary
         - if user_signed_in?
+          div.search-bar
+            = form_tag results_path, method: :get, role: 'search' do
+              = search_field_tag :query, params[:query]
+              = submit_tag "Search", name: nil
           div.header-info
             | Signed in as: 
             = current_user.email

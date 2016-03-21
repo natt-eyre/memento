@@ -17,6 +17,7 @@ gem "newrelic_rpm", ">= 3.9.8"
 gem "normalize-rails", "~> 3.0.0"
 gem "paperclip", "~> 4.3"
 gem "pg"
+gem 'pg_search'
 gem "puma"
 gem "rack-canonical-host"
 gem "rails", "~> 4.2.0"
