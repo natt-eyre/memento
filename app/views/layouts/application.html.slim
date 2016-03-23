@@ -17,8 +17,9 @@ html lang="en"
         - if user_signed_in?
           div.search-bar
             = form_tag results_path, method: :get, role: 'search' do
-              = search_field_tag :query, params[:query]
-              = submit_tag "Search", name: nil
+              = submit_tag "Search", name: "search_submit"
+              div.search_field
+                = search_field_tag :query, params[:query]
           div.header-info
             | Signed in as: 
             = current_user.email

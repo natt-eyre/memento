@@ -198,3 +198,10 @@ li.block {
 .search-bar {
   width: 300px;
 }
+.search_field {
+  overflow: hidden;
+  padding-right: .5em;
+}
+[name="search_submit"] {
+  float: right;
+}
