@@ -9,21 +9,34 @@ html lang="en"
     = stylesheet_link_tag :application, media: "all"
     = csrf_meta_tags
   body class=body_class
-    div.container
-      div.row-header
-        = link_to root_path do
-          h1.diary-header
-            | Simple Diary
+    header.navigation[role="banner"]
+      .navigation-wrapper
+        = link_to(root_path, class: "logo") do
+          img[src="http://s3.amazonaws.com/memento-diary/entries/pictures/000/000/012/original/Drawing.png" alt="Logo Image"]
+        a#js-mobile-menu.navigation-menu-button[href="http://memento-production.herokuapp.com/"]
+          | MENU
         - if user_signed_in?
-          div.search-bar
-            = form_tag results_path, method: :get, role: 'search' do
-              = submit_tag "Search", name: "search_submit"
-              div.search_field
-                = search_field_tag :query, params[:query]
-          div.header-info
-            | Signed in as: 
-            = current_user.email
-            = link_to " Sign out", destroy_user_session_path, method: :delete
+          nav[role="navigation"]
+            ul#js-navigation-menu.navigation-menu.show
+              li.nav-link
+                a[href="javascript:void(0)"]
+                  | Stats
+              li.nav-link
+                a[href="javascript:void(0)"]
+                  | Settings
+              li.nav-link
+                a[href="javascript:void(0)"]
+                  | Signed in as: 
+                  = current_user.email
+              li.nav-link
+                = link_to " Sign out", destroy_user_session_path, method: :delete
+          .navigation-tools
+            .search-bar
+              = form_tag results_path, method: :get, role: 'search' do
+                = search_field_tag :query, params[:query], placeholder: "Enter Search"
+                button[type="submit"]
+                  img[src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="Search Icon"]
+    div.container  
       = render "flashes"
       = yield
       = render "javascript"

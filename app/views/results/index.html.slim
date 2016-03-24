@@ -1,10 +1,10 @@
 h3
-  | Search results for
+  | Search results for 
   em
     = params[:query]
 - @search_results.each do |result|
   h4
-    = link_to result.target_date, result
+    = link_to result.target_date.strftime("%A, %d %b %Y"), result
   div
     = result.content.html_safe
   hr

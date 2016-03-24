@@ -15,4 +15,5 @@
 //= require jquery-ui
 //= require contenteditable
 //= require calender
+//= navbar_header
 //= require_tree .

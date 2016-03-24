@@ -1,4 +1,4 @@
-div.row
+div.row.row_buttons
   div.button-group
     = link_to t("entries.index.today"), new_entry_path({ "target_date": "today" }), class: "simple-button"
     = link_to t("entries.index.yesterday"), new_entry_path({ "target_date": "yesterday" }), class: "simple-button"

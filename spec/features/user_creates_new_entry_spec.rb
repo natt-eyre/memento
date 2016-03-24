@@ -5,7 +5,6 @@ feature "User creates an entry" do
     login_as( create(:user), :scope => :user, :run_callbacks => false)
     visit root_path
 
-    expect(page).to have_content("Diary")
     click_on I18n.t("entries.index.today")
     el = find(:xpath, "//div[@contenteditable='true']")
     el.set("good day")
@@ -20,7 +19,6 @@ feature "User creates an entry" do
     login_as( create(:user), :scope => :user, :run_callbacks => false)
     visit root_path
 
-    expect(page).to have_content("Diary")
     click_on I18n.t("entries.index.any_date")
     el = find(:xpath, "//div[@contenteditable='true']")
     el.set("good day")
@@ -37,7 +35,6 @@ feature "User creates an entry" do
     login_as( create(:user), :scope => :user, :run_callbacks => false)
     visit root_path
 
-    expect(page).to have_content("Diary")
     click_on I18n.t("entries.index.today")
     el = find(:xpath, "//div[@contenteditable='true']")
     el.set("good day")
@@ -50,8 +47,6 @@ feature "User creates an entry" do
   scenario "unsuccessfully" do
     login_as( create(:user), :scope => :user, :run_callbacks => false)
     visit root_path
-
-    expect(page).to have_content("Diary")
 
     click_on I18n.t("entries.index.any_date")
     click_on I18n.t("entries.new.save")
