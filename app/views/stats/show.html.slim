@@ -1,0 +1,19 @@
+.grid-items
+  a.grid-item[href="javascript:void(0)"]
+    img[src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" alt=""]
+    h1
+      = @stats.entries_count
+    p
+      = pluralize_without_count(@stats.entries_count, 'entry')
+  a.grid-item[href="javascript:void(0)"]
+    img[src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3.png" alt=""]
+    h1
+      = @stats.words_count
+    p
+      = pluralize_without_count(@stats.words_count, 'word')
+  a.grid-item[href="javascript:void(0)"]
+    img[src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt=""]
+    h1
+      = @stats.letters_count
+    p
+      = pluralize_without_count(@stats.letters_count, 'letter')

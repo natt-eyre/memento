@@ -38,3 +38,5 @@ en:
       destroy: Delete entry
     edit:
       save: Save entry
+  stats:
+    show: Show Stats
