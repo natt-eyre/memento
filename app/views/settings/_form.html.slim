@@ -1,0 +1,5 @@
+= simple_form_for @user,
+    :url => settings_path,
+    :method => 'put' do |f|
+  = f.input :subscribed, label: "Subscribe for daily reminders", as: :boolean
+  = f.button :button, I18n.t("settings.save"), class: "simple-button"

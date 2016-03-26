@@ -21,8 +21,7 @@ html lang="en"
               li.nav-link
                 = link_to t("stats.show"), stats_path
               li.nav-link
-                a[href="javascript:void(0)"]
-                  | Settings
+                = link_to t("settings.edit"), edit_settings_path
               li.nav-link
                 a[href="javascript:void(0)"]
                   | Signed in as: 
@@ -35,7 +34,7 @@ html lang="en"
                 = search_field_tag :query, params[:query], placeholder: "Enter Search"
                 button[type="submit"]
                   img[src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="Search Icon"]
-    div.container  
+    div.container
       = render "flashes"
       = yield
       = render "javascript"

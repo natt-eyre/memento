@@ -40,3 +40,6 @@ en:
       save: Save entry
   stats:
     show: Stats
+  settings:
+    edit: Settings
+    save: Save Settings

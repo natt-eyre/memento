@@ -17,3 +17,6 @@
       = @stats.letters_count
     p
       = pluralize_without_count(@stats.letters_count, 'letter')
+div.row.row_buttons
+  div.button-group
+    = link_to t("entries.show.index"), root_path

@@ -11,9 +11,9 @@ feature "User views stats" do
 
     expect(page).to have_link(I18n.t("entries.show.index"))
     expect(page.current_path).to eq(stats_path)
-    expect(page).to have_content("1 entry")
-    expect(page).to have_content("1 word")
-    expect(page).to have_content("1 letter")
+    expect(page).to have_content("1entry")
+    expect(page).to have_content("1word")
+    expect(page).to have_content("1letter")
     # expect(page).to have_content("0 days")
   end
 
@@ -24,8 +24,6 @@ feature "User views stats" do
 
     expect(page).to have_link(I18n.t("entries.show.index"))
     expect(page.current_path).to eq(stats_path)
-    expect(page).to have_content("0 entries")
-    expect(page).to have_content("0 words")
-    expect(page).to have_content("0 letters")
+    expect(page).to have_content("0")
   end
 end

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "User creates an entry" do
+feature "User updates an entry" do
   scenario "successfully", js: true do
     user = create(:user)
     entry = create(:entry, user: user)

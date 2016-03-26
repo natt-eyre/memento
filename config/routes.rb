@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :entries, only: [:new, :index, :create, :show, :edit, :update, :destroy]
   get 'results', to: 'results#index', as: 'results'
   resource :stats, only: [:show]
+  resource :settings, only: [:edit, :update]
 end
