@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'results', to: 'results#index', as: 'results'
   resource :stats, only: [:show]
   resource :settings, only: [:edit, :update]
+  get '/subscriptions/unsubscribe/:signature' => 'subscriptions#unsubscribe', as: 'unsubscribe'
 end
