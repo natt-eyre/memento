@@ -1,3 +1,11 @@
+h1
+  | Hello, 
+  = @user.email
+  | !
+p
+  | You signed up to Memento 
+  = time_ago_in_words(@user.created_at)
+  |  ago.
 .grid-items
   a.grid-item[href="javascript:void(0)"]
     img[src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" alt=""]
@@ -16,7 +24,37 @@
     h1
       = @stats.letters_count
     p
-      = pluralize_without_count(@stats.letters_count, 'letter')
+      = pluralize_without_count(@stats.letters_count, 'character')
+  a.grid-item[href="javascript:void(0)"]
+    p
+      | Most frequent words
+    br
+    - @stats.most_frequent_words(5).each do |pair|
+      p
+        = pair[0]
+        |  (
+        = pair[1]
+        | )
+  a.grid-item[href="javascript:void(0)"]
+    p
+      | Average entry length
+    br
+    h1
+      = @stats.average_entry_length_chars
+    p
+      = pluralize_without_count(@stats.average_entry_length_chars, 'character')
+    h1
+      = @stats.average_entry_length_words
+    p
+      = pluralize_without_count(@stats.average_entry_length_words, 'word')
+  a.grid-item[href="javascript:void(0)"]
+    p
+      | Longest streak
+    br
+    h1
+      = @stats.longest_streak
+    p
+      = pluralize_without_count(@stats.longest_streak, 'day')
 div.row.row_buttons
   div.button-group
     = link_to t("entries.show.index"), root_path
