@@ -26,9 +26,8 @@ p
     p
       = pluralize_without_count(@stats.letters_count, 'character')
   a.grid-item[href="javascript:void(0)"]
-    p
+    h1
       | Most frequent words
-    br
     - @stats.most_frequent_words(5).each do |pair|
       p
         = pair[0]
@@ -36,9 +35,8 @@ p
         = pair[1]
         | )
   a.grid-item[href="javascript:void(0)"]
-    p
+    h1
       | Average entry length
-    br
     h1
       = @stats.average_entry_length_chars
     p
@@ -48,9 +46,8 @@ p
     p
       = pluralize_without_count(@stats.average_entry_length_words, 'word')
   a.grid-item[href="javascript:void(0)"]
-    p
+    h1
       | Longest streak
-    br
     h1
       = @stats.longest_streak
     p

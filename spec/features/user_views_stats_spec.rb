@@ -13,8 +13,9 @@ feature "User views stats" do
     expect(page.current_path).to eq(stats_path)
     expect(page).to have_content("1entry")
     expect(page).to have_content("1word")
-    expect(page).to have_content("1letter")
-    # expect(page).to have_content("0 days")
+    expect(page).to have_content("1character")
+    expect(page).to have_content("g (1)")
+    expect(page).to have_content("1day")
   end
 
   scenario "without entries" do

@@ -1,6 +1,6 @@
 class UserStats
   require 'facets'
-  
+
   def initialize(user)
     @user = user
   end
@@ -23,29 +23,27 @@ class UserStats
   end
 
   def average_entry_length_chars
-    letters_count / entries_count
+      letters_count / entries_count
   end
 
   def average_entry_length_words
-    words_count / entries_count
+      words_count / entries_count
   end
 
   def longest_streak
-    streak = 1
-    streaks = []
-    dates = user_entries.map{ |entry| entry.target_date.to_date }
-    dates.each_index do |i|
-      if dates[i+1] - dates[i] == 1
-        streak += 1
-      elsif (dates[i+1] - dates[i]) > 1
-        streaks << streak
-        streak = 1
-      end
-      if (i + 2) == dates.size
-        streaks << streak
-        return streaks.max
+    return 1 if entries_count == 1
+    curr_streak = 1
+    max_streak = 1
+    dates = user_entries.map{ |entry| entry.target_date.to_date }.sort
+    (1...dates.size).each do |i|
+      if dates[i] - dates[i-1] == 1
+        curr_streak += 1
+      elsif (dates[i] - dates[i-1]) > 1
+        max_streak = [curr_streak, max_streak].max
+        curr_streak = 1
       end
     end
+    max_streak = [curr_streak, max_streak].max
   end
 
   private
