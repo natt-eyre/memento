@@ -68,6 +68,6 @@ class UserStats
   end
 
   def frequency_count
-    get_all_words.frequency.sort_by{ |k, v| v }.reverse
+    p = Hash.new(0); get_all_words.each{ |v| p[v] += 1 }; p.sort_by {|k, v| v}.reverse
   end
 end
