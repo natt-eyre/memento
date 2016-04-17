@@ -1,5 +1,4 @@
 class UserStats
-  require 'facets'
 
   def initialize(user)
     @user = user

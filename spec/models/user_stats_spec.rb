@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'facets'
 
 RSpec.describe UserStats do
   describe "#entries_count" do
